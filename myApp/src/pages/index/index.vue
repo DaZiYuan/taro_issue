@@ -1,21 +1,27 @@
 <template>
   <view class="index">
-    <NumberDisplay/>
-    <NumberSubmit/>
+    {{ config.title }}
+    <!-- <NumberDisplay /> -->
+    <!-- <NumberSubmit /> -->
   </view>
 </template>
 
-<script>
-import NumberDisplay from '../../components/NumberDisplay.vue'
-import NumberSubmit from '../../components/NumberSubmit.vue'
-
+<script lang="ts">
+// import NumberDisplay from "../../components/NumberDisplay.vue";
+// import NumberSubmit from "../../components/NumberSubmit.vue";
+import { config } from "@/config/data";
 export default {
-  name: 'Index',
+  name: "index-page",
+  data() {
+    return {
+      config,
+    };
+  },
   components: {
-    NumberDisplay,
-    NumberSubmit
-  }
-}
+    // NumberDisplay,
+    // NumberSubmit,
+  },
+};
 </script>
 
 <style>

@@ -1,13 +1,21 @@
-import { ComponentCustomProperties } from 'vue'
-import { Store } from 'vuex'
+import { ComponentCustomProperties } from "vue";
+import { Store } from "vuex";
 
-declare module '@vue/runtime-core' {
+declare module "@vue/runtime-core" {
   // Declare your own store states.
   interface State {
-    count: number
+    count: number;
   }
 
   interface ComponentCustomProperties {
-    $store: Store<State>
+    $store: Store<State>;
   }
+}
+
+declare module "*.vue" {
+  import { App, defineComponent } from "vue";
+  const component: ReturnType<typeof defineComponent> & {
+    install(app: App): void;
+  };
+  export default component;
 }

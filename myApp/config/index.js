@@ -1,4 +1,8 @@
+const path = require('path');
 const config = {
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
+  },
   projectName: 'myApp',
   date: '2022-4-25',
   designWidth: 750,

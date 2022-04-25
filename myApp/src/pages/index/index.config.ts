@@ -1,3 +1,5 @@
+import { config } from "@/config/data";
+// import { config } from "../../config/data";
 export default definePageConfig({
-  navigationBarTitleText: '首页'
-})
+  navigationBarTitleText: config.title,
+});
